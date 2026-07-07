@@ -67,7 +67,6 @@ public class LaboratoryMenu {
     public void technicianMenu() {
 
         Scanner input = new Scanner(System.in);
-
         int choice;
 
         do {
@@ -75,9 +74,11 @@ public class LaboratoryMenu {
             System.out.println("\n===== LABORATORY TECHNICIAN MENU =====");
             System.out.println("1. Add DNA Sample");
             System.out.println("2. Update DNA Sample");
-            System.out.println("3. View DNA Samples");
-            System.out.println("4. Logout");
+            System.out.println("3. Delete DNA Sample");
+            System.out.println("4. View DNA Samples");
+            System.out.println("5. Logout");
             System.out.print("Enter your choice : ");
+
             choice = input.nextInt();
             input.nextLine();
 
@@ -123,11 +124,20 @@ public class LaboratoryMenu {
 
                 case 3:
 
-                    manager.viewSamples();
+                    System.out.print("Enter Sample ID : ");
+                    String deleteID = input.nextLine();
+
+                    manager.deleteSample(deleteID);
 
                     break;
 
                 case 4:
+
+                    manager.viewSamples();
+
+                    break;
+
+                case 5:
 
                     System.out.println("Logout Successful.");
 
@@ -139,7 +149,7 @@ public class LaboratoryMenu {
 
             }
 
-        } while (choice != 4);
+        } while (choice != 5);
 
     }
 
@@ -148,7 +158,6 @@ public class LaboratoryMenu {
     public void researcherMenu() {
 
         Scanner input = new Scanner(System.in);
-
         int choice;
 
         do {
@@ -158,6 +167,7 @@ public class LaboratoryMenu {
             System.out.println("2. Analyze DNA Sample");
             System.out.println("3. Logout");
             System.out.print("Enter your choice : ");
+
             choice = input.nextInt();
             input.nextLine();
 
