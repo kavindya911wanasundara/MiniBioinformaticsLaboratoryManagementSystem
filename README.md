@@ -110,4 +110,4 @@ https://github.com/kavindya911wanasundara/MiniBioinformaticsLaboratoryManagement
 **s17124 - W.M.K.S. Wanasundara**
 
 BSc (Hons) Bioinformatics(Reading),
-Faculty of Science,University of Colombo
+Faculty of Science,University of Colombo.
