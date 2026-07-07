@@ -23,12 +23,11 @@ public class LaboratoryMenu {
 
     }
 
-    // -------------------- ADMIN MENU --------------------
+    // ---------------- ADMIN MENU ----------------
 
     public void adminMenu() {
 
         Scanner input = new Scanner(System.in);
-
         int choice;
 
         do {
@@ -63,7 +62,7 @@ public class LaboratoryMenu {
 
     }
 
-    // -------------------- TECHNICIAN MENU --------------------
+    // ---------------- TECHNICIAN MENU ----------------
 
     public void technicianMenu() {
 
@@ -75,8 +74,9 @@ public class LaboratoryMenu {
 
             System.out.println("\n===== LABORATORY TECHNICIAN MENU =====");
             System.out.println("1. Add DNA Sample");
-            System.out.println("2. View DNA Samples");
-            System.out.println("3. Logout");
+            System.out.println("2. Update DNA Sample");
+            System.out.println("3. View DNA Samples");
+            System.out.println("4. Logout");
             System.out.print("Enter your choice : ");
             choice = input.nextInt();
             input.nextLine();
@@ -105,11 +105,29 @@ public class LaboratoryMenu {
 
                 case 2:
 
-                    manager.viewSamples();
+                    System.out.print("Enter Sample ID : ");
+                    String updateID = input.nextLine();
+
+                    System.out.print("Enter New Sample Name : ");
+                    String newName = input.nextLine();
+
+                    System.out.print("Enter New Organism : ");
+                    String newOrganism = input.nextLine();
+
+                    System.out.print("Enter New DNA Sequence : ");
+                    String newSequence = input.nextLine();
+
+                    manager.updateSample(updateID, newName, newOrganism, newSequence);
 
                     break;
 
                 case 3:
+
+                    manager.viewSamples();
+
+                    break;
+
+                case 4:
 
                     System.out.println("Logout Successful.");
 
@@ -121,11 +139,11 @@ public class LaboratoryMenu {
 
             }
 
-        } while (choice != 3);
+        } while (choice != 4);
 
     }
 
-    // -------------------- RESEARCHER MENU --------------------
+    // ---------------- RESEARCHER MENU ----------------
 
     public void researcherMenu() {
 
@@ -160,14 +178,14 @@ public class LaboratoryMenu {
 
                     if (dna != null) {
 
-                        System.out.println("Sequence Length : "
-                                + analyzer.sequenceLength(dna.getDnaSequence()));
+                        System.out.println("Sequence Length : " +
+                                analyzer.sequenceLength(dna.getDnaSequence()));
 
-                        System.out.println("GC Content : "
-                                + analyzer.calculateGCContent(dna.getDnaSequence()));
+                        System.out.println("GC Content : " +
+                                analyzer.calculateGCContent(dna.getDnaSequence()));
 
-                        System.out.println("Complement Sequence : "
-                                + analyzer.complement(dna.getDnaSequence()));
+                        System.out.println("Complement Sequence : " +
+                                analyzer.complement(dna.getDnaSequence()));
 
                     } else {
 
