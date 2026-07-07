@@ -101,7 +101,7 @@ git clone https://github.com/your-username/MiniBioinformaticsLaboratoryManagemen
 
 ## Author
 
-Kavindya Wanasundara
+s17124-Kavindya Wanasundara
 
 University of Colombo
 
