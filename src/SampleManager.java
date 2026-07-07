@@ -3,8 +3,37 @@ public class SampleManager {
     DNASample[] samples = new DNASample[10];
     int count = 0;
 
+    // Check whether DNA sequence is valid
+    public boolean isValidDNA(String sequence) {
+
+        sequence = sequence.toUpperCase();
+
+        for (int i = 0; i < sequence.length(); i++) {
+
+            char ch = sequence.charAt(i);
+
+            if (ch != 'A' && ch != 'T' && ch != 'G' && ch != 'C') {
+
+                return false;
+
+            }
+
+        }
+
+        return true;
+
+    }
+
     // Add Sample
     public void addSample(DNASample sample) {
+
+        if (!isValidDNA(sample.getDnaSequence())) {
+
+            System.out.println("Invalid DNA Sequence.");
+            System.out.println("Only A, T, G and C are allowed.");
+            return;
+
+        }
 
         if (count < samples.length) {
 
@@ -66,6 +95,14 @@ public class SampleManager {
         DNASample sample = searchSample(sampleID);
 
         if (sample != null) {
+
+            if (!isValidDNA(newSequence)) {
+
+                System.out.println("Invalid DNA Sequence.");
+                System.out.println("Only A, T, G and C are allowed.");
+                return;
+
+            }
 
             sample.setSampleName(newName);
             sample.setOrganism(newOrganism);
