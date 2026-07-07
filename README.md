@@ -7,7 +7,7 @@ This project was developed as part of the **Advanced Programming Concepts** modu
 The project demonstrates the development of a simple **Mini Bioinformatics Laboratory Management System** using Java. It follows an AI-assisted software development approach by maintaining two versions of the project:
 
 - **Main Branch** – Traditional Java Implementation
-- **AI-Assisted Version Branch** – Enhanced implementation with AI-assisted improvements
+- **AI-Assisted-Version Branch** – Enhanced implementation with AI-assisted improvements
 
 ---
 
@@ -25,9 +25,9 @@ The main branch contains the manually developed version of the project using cor
 - View DNA Samples
 - Search DNA Samples
 - DNA Sequence Analysis
-    - Sequence Length
-    - GC Content
-    - Complement Sequence
+  - Sequence Length
+  - GC Content
+  - Complement Sequence
 - Logout
 
 This version was developed using basic Object-Oriented Programming concepts without AI-assisted enhancements.
@@ -38,10 +38,10 @@ This version was developed using basic Object-Oriented Programming concepts with
 
 The AI-assisted implementation is available in a separate branch.
 
-### To access it:
+### To access it
 
 ```bash
-git checkout ai-assisted
+git checkout AI-Assisted-Version
 ```
 
 This version contains several improvements over the traditional implementation.
@@ -81,7 +81,7 @@ This version contains several improvements over the traditional implementation.
 1. Clone the repository.
 
 ```bash
-git clone https://github.com/your-username/MiniBioinformaticsLaboratoryManagementSystem.git
+git clone https://github.com/kavindya911wanasundara/MiniBioinformaticsLaboratoryManagementSystem.git
 ```
 
 2. Open the project in IntelliJ IDEA.
@@ -95,16 +95,19 @@ git clone https://github.com/your-username/MiniBioinformaticsLaboratoryManagemen
 | Branch | Description |
 |---------|-------------|
 | main | Traditional Java Implementation |
-| ai-assisted | AI-Assisted Improved Version |
+| AI-Assisted-Version | AI-Assisted Improved Version |
+
+---
+
+## Repository
+
+https://github.com/kavindya911wanasundara/MiniBioinformaticsLaboratoryManagementSystem
 
 ---
 
 ## Author
 
-s17124-Kavindya Wanasundara
+**s17124 - W.M.K.S. Wanasundara**
 
-University of Colombo
-
-Faculty of Science
-
-Bioinformatics (Hons)
+BSc (Hons) Bioinformatics(Reading),
+Faculty of Science,University of Colombo
