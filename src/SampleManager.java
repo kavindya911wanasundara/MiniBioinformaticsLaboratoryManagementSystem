@@ -81,4 +81,31 @@ public class SampleManager {
 
     }
 
+    // Delete Sample
+    public void deleteSample(String sampleID) {
+
+        for (int i = 0; i < count; i++) {
+
+            if (samples[i].getSampleID().equals(sampleID)) {
+
+                for (int j = i; j < count - 1; j++) {
+
+                    samples[j] = samples[j + 1];
+
+                }
+
+                samples[count - 1] = null;
+                count--;
+
+                System.out.println("Sample deleted successfully.");
+                return;
+
+            }
+
+        }
+
+        System.out.println("Sample not found.");
+
+    }
+
 }
