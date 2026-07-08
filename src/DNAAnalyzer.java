@@ -1,20 +1,14 @@
 public class DNAAnalyzer {
 
+    // Sequence Length
     public int sequenceLength(String sequence) {
-
-        if (sequence == null || sequence.isEmpty()) {
-            return 0;
-        }
 
         return sequence.length();
 
     }
 
+    // GC Content
     public double calculateGCContent(String sequence) {
-
-        if (sequence == null || sequence.isEmpty()) {
-            return 0;
-        }
 
         int gcCount = 0;
 
@@ -25,7 +19,9 @@ public class DNAAnalyzer {
             char ch = sequence.charAt(i);
 
             if (ch == 'G' || ch == 'C') {
+
                 gcCount++;
+
             }
 
         }
@@ -34,46 +30,58 @@ public class DNAAnalyzer {
 
     }
 
+    // Complement Sequence
     public String complement(String sequence) {
 
-        if (sequence == null || sequence.isEmpty()) {
-            return "";
-        }
-
-        StringBuilder result = new StringBuilder();
-
         sequence = sequence.toUpperCase();
+
+        String result = "";
 
         for (int i = 0; i < sequence.length(); i++) {
 
             char ch = sequence.charAt(i);
 
-            switch (ch) {
+            if (ch == 'A') {
 
-                case 'A':
-                    result.append('T');
-                    break;
+                result += "T";
 
-                case 'T':
-                    result.append('A');
-                    break;
+            }
+            else if (ch == 'T') {
 
-                case 'G':
-                    result.append('C');
-                    break;
+                result += "A";
 
-                case 'C':
-                    result.append('G');
-                    break;
+            }
+            else if (ch == 'G') {
 
-                default:
-                    result.append(ch);
+                result += "C";
+
+            }
+            else if (ch == 'C') {
+
+                result += "G";
 
             }
 
         }
 
-        return result.toString();
+        return result;
+
+    }
+
+    // Reverse Complement Sequence
+    public String reverseComplement(String sequence) {
+
+        String complement = complement(sequence);
+
+        String reverse = "";
+
+        for (int i = complement.length() - 1; i >= 0; i--) {
+
+            reverse += complement.charAt(i);
+
+        }
+
+        return reverse;
 
     }
 
