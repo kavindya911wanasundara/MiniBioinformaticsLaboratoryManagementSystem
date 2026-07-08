@@ -46,14 +46,14 @@ public class SampleManager {
 
         if (isDuplicateID(sample.getSampleID())) {
 
-            System.out.println("Sample ID already exists.");
+            System.out.println("\nSample ID already exists.");
             return;
 
         }
 
         if (!isValidDNA(sample.getDnaSequence())) {
 
-            System.out.println("Invalid DNA Sequence.");
+            System.out.println("\nInvalid DNA Sequence.");
             System.out.println("Only A, T, G and C are allowed.");
             return;
 
@@ -63,11 +63,14 @@ public class SampleManager {
 
             samples[count] = sample;
             count++;
-            System.out.println("Sample added successfully.");
+
+            System.out.println("\n====================================");
+            System.out.println(" Sample added successfully!");
+            System.out.println("====================================");
 
         } else {
 
-            System.out.println("Storage is full.");
+            System.out.println("\nStorage is full.");
 
         }
 
@@ -78,17 +81,22 @@ public class SampleManager {
 
         if (count == 0) {
 
-            System.out.println("No samples available.");
+            System.out.println("\nNo DNA samples available.");
 
         } else {
 
+            System.out.println("\n==============================================");
+            System.out.println("          DNA SAMPLE DETAILS");
+            System.out.println("==============================================");
+
             for (int i = 0; i < count; i++) {
 
-                System.out.println("-----------------------------");
-                System.out.println("Sample ID : " + samples[i].getSampleID());
-                System.out.println("Sample Name : " + samples[i].getSampleName());
-                System.out.println("Organism : " + samples[i].getOrganism());
-                System.out.println("DNA Sequence : " + samples[i].getDnaSequence());
+                System.out.println("Sample Number : " + (i + 1));
+                System.out.println("Sample ID     : " + samples[i].getSampleID());
+                System.out.println("Sample Name   : " + samples[i].getSampleName());
+                System.out.println("Organism      : " + samples[i].getOrganism());
+                System.out.println("DNA Sequence  : " + samples[i].getDnaSequence());
+                System.out.println("----------------------------------------------");
 
             }
 
@@ -122,7 +130,7 @@ public class SampleManager {
 
             if (!isValidDNA(newSequence)) {
 
-                System.out.println("Invalid DNA Sequence.");
+                System.out.println("\nInvalid DNA Sequence.");
                 System.out.println("Only A, T, G and C are allowed.");
                 return;
 
@@ -132,11 +140,11 @@ public class SampleManager {
             sample.setOrganism(newOrganism);
             sample.setDnaSequence(newSequence);
 
-            System.out.println("Sample updated successfully.");
+            System.out.println("\nSample updated successfully.");
 
         } else {
 
-            System.out.println("Sample not found.");
+            System.out.println("\nSample not found.");
 
         }
 
@@ -158,14 +166,14 @@ public class SampleManager {
                 samples[count - 1] = null;
                 count--;
 
-                System.out.println("Sample deleted successfully.");
+                System.out.println("\nSample deleted successfully.");
                 return;
 
             }
 
         }
 
-        System.out.println("Sample not found.");
+        System.out.println("\nSample not found.");
 
     }
 
