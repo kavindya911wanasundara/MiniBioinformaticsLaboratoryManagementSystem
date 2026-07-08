@@ -23,11 +23,10 @@ public class LaboratoryMenu {
 
     }
 
-    // ---------------- ADMIN MENU ----------------
-
     public void adminMenu() {
 
         Scanner input = new Scanner(System.in);
+
         int choice;
 
         do {
@@ -36,6 +35,7 @@ public class LaboratoryMenu {
             System.out.println("1. View DNA Samples");
             System.out.println("2. Logout");
             System.out.print("Enter your choice : ");
+
             choice = input.nextInt();
 
             switch (choice) {
@@ -62,11 +62,10 @@ public class LaboratoryMenu {
 
     }
 
-    // ---------------- TECHNICIAN MENU ----------------
-
     public void technicianMenu() {
 
         Scanner input = new Scanner(System.in);
+
         int choice;
 
         do {
@@ -153,11 +152,10 @@ public class LaboratoryMenu {
 
     }
 
-    // ---------------- RESEARCHER MENU ----------------
-
     public void researcherMenu() {
 
         Scanner input = new Scanner(System.in);
+
         int choice;
 
         do {
@@ -188,14 +186,11 @@ public class LaboratoryMenu {
 
                     if (dna != null) {
 
-                        System.out.println("Sequence Length : " +
-                                analyzer.sequenceLength(dna.getDnaSequence()));
-
-                        System.out.println("GC Content : " +
-                                analyzer.calculateGCContent(dna.getDnaSequence()));
-
-                        System.out.println("Complement Sequence : " +
-                                analyzer.complement(dna.getDnaSequence()));
+                        System.out.println("\n===== DNA ANALYSIS RESULT =====");
+                        System.out.println("Sequence Length : " + analyzer.sequenceLength(dna.getDnaSequence()));
+                        System.out.println("GC Content : " + analyzer.calculateGCContent(dna.getDnaSequence()) + "%");
+                        System.out.println("Complement Sequence : " + analyzer.complement(dna.getDnaSequence()));
+                        System.out.println("Reverse Complement : " + analyzer.reverseComplement(dna.getDnaSequence()));
 
                     } else {
 
