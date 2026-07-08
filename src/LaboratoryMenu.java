@@ -23,6 +23,8 @@ public class LaboratoryMenu {
 
     }
 
+    // ---------------- ADMIN MENU ----------------
+
     public void adminMenu() {
 
         Scanner input = new Scanner(System.in);
@@ -61,6 +63,8 @@ public class LaboratoryMenu {
         } while (choice != 2);
 
     }
+
+    // ---------------- TECHNICIAN MENU ----------------
 
     public void technicianMenu() {
 
@@ -152,6 +156,8 @@ public class LaboratoryMenu {
 
     }
 
+    // ---------------- RESEARCHER MENU ----------------
+
     public void researcherMenu() {
 
         Scanner input = new Scanner(System.in);
@@ -162,8 +168,9 @@ public class LaboratoryMenu {
 
             System.out.println("\n===== RESEARCHER MENU =====");
             System.out.println("1. View DNA Samples");
-            System.out.println("2. Analyze DNA Sample");
-            System.out.println("3. Logout");
+            System.out.println("2. Search DNA Sample");
+            System.out.println("3. Analyze DNA Sample");
+            System.out.println("4. Logout");
             System.out.print("Enter your choice : ");
 
             choice = input.nextInt();
@@ -178,6 +185,29 @@ public class LaboratoryMenu {
                     break;
 
                 case 2:
+
+                    System.out.print("Enter Sample ID : ");
+                    String searchID = input.nextLine();
+
+                    DNASample sample = manager.searchSample(searchID);
+
+                    if (sample != null) {
+
+                        System.out.println("\n===== SAMPLE DETAILS =====");
+                        System.out.println("Sample ID : " + sample.getSampleID());
+                        System.out.println("Sample Name : " + sample.getSampleName());
+                        System.out.println("Organism : " + sample.getOrganism());
+                        System.out.println("DNA Sequence : " + sample.getDnaSequence());
+
+                    } else {
+
+                        System.out.println("Sample not found.");
+
+                    }
+
+                    break;
+
+                case 3:
 
                     System.out.print("Enter Sample ID : ");
                     String sampleID = input.nextLine();
@@ -200,7 +230,7 @@ public class LaboratoryMenu {
 
                     break;
 
-                case 3:
+                case 4:
 
                     System.out.println("Logout Successful.");
 
@@ -212,7 +242,7 @@ public class LaboratoryMenu {
 
             }
 
-        } while (choice != 3);
+        } while (choice != 4);
 
     }
 
