@@ -24,8 +24,32 @@ public class SampleManager {
 
     }
 
+    // Check duplicate Sample ID
+    public boolean isDuplicateID(String sampleID) {
+
+        for (int i = 0; i < count; i++) {
+
+            if (samples[i].getSampleID().equals(sampleID)) {
+
+                return true;
+
+            }
+
+        }
+
+        return false;
+
+    }
+
     // Add Sample
     public void addSample(DNASample sample) {
+
+        if (isDuplicateID(sample.getSampleID())) {
+
+            System.out.println("Sample ID already exists.");
+            return;
+
+        }
 
         if (!isValidDNA(sample.getDnaSequence())) {
 
