@@ -5,58 +5,53 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+
         Login login = new Login();
 
-        int choice = 0;
+        // Create only one manager and one analyzer
+        SampleManager manager = new SampleManager();
+        DNAAnalyzer analyzer = new DNAAnalyzer();
+
+        int choice;
 
         do {
 
-            System.out.println("\n======================================================");
-            System.out.println("   Mini Bioinformatics Laboratory Management System");
-            System.out.println("======================================================");
+            System.out.println("==== Welcome to Mini Bioinformatics Laboratory Management System ====");
             System.out.println("1. Login");
             System.out.println("2. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice : ");
 
-            if (input.hasNextInt()) {
+            choice = input.nextInt();
 
-                choice = input.nextInt();
+            switch (choice) {
 
-                switch (choice) {
+                case 1:
 
-                    case 1:
+                    String role = login.login();
 
-                        String role = login.login();
+                    if (role != null) {
 
-                        if (role != null) {
+                        LaboratoryMenu menu = new LaboratoryMenu(manager, analyzer);
+                        menu.menu(role);
 
-                            LaboratoryMenu menu = new LaboratoryMenu();
-                            menu.menu(role);
+                    }
 
-                        }
+                    break;
 
-                        break;
+                case 2:
 
-                    case 2:
+                    System.out.println("Thank you!");
 
-                        System.out.println("\nThank you for using the system.");
+                    break;
 
-                        break;
+                default:
 
-                    default:
+                    System.out.println("Invalid Choice.");
 
-                        System.out.println("\nInvalid choice. Please try again.");
-
-                }
-
-            } else {
-
-                System.out.println("\nPlease enter a valid number.");
-                input.next();
             }
 
         } while (choice != 2);
 
-        input.close();
     }
+
 }

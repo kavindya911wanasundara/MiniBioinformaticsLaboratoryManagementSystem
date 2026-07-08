@@ -2,8 +2,15 @@ import java.util.Scanner;
 
 public class LaboratoryMenu {
 
-    SampleManager manager = new SampleManager();
-    DNAAnalyzer analyzer = new DNAAnalyzer();
+    private SampleManager manager;
+    private DNAAnalyzer analyzer;
+
+    public LaboratoryMenu(SampleManager manager, DNAAnalyzer analyzer) {
+
+        this.manager = manager;
+        this.analyzer = analyzer;
+
+    }
 
     public void menu(String role) {
 
